@@ -1,0 +1,192 @@
+<!--<?php
+include("cone.php");
+	if(isset($_POST['submit'])){
+		$Assunto = $_POST['Assunto'];
+		$NomePessoa = $_POST['NomePessoa'];
+		$EmailPessoa = $_POST['EmailPessoa'];
+		$TelefoneP = $_POST['TelefoneP'];
+		$Regiao = $_POST['Regiao'];
+		$Comentario = $_POST['Comentario'];
+
+			$sql = "INSERT INTO sugestoes (Assunto, NomePessoa, EmailPessoa, TelefoneP, Regiao, Comentario)
+			VALUES ('$Assunto', '$NomePessoa', '$EmailPessoa', '$TelefoneP', '$Regiao', '$Comentario')";
+
+					if(mysqli_query($conn, $sql)){
+					header("location:Redirecio2.php");
+					}else{
+					echo "Erro ao enviar";
+					}
+					$response = array("success" => true);
+					}
+?>-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Churrascaria&Cia | Contatos</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../CSS/form.css">
+	<link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<br>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<div class="body5">
+	<div class="Opc">
+		<br><br>
+			<div class="Opc1">
+				<nav><ul>
+	    <li><a href="Inicio.html">INÍCIO</a></li>
+		<li><a href="Cardapio.html">CARDÁPIO</a></li>
+	    <li><a href="Churrascaria.html">CHURRASCARIA</a></li>
+	    		</ul></nav>
+			</div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<div class="tri"><a href="Inicio.html"><img src="../Imagens/CC2.png" width="125" height="125"></a></div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+			<div class="Opc2">
+				<nav><ul>
+		<li><a href="Eventos.html">EVENTOS</a></li>
+		<li><a href="Contact.html">CONTATOS</a></li>
+	    <li><a href="Reserva.html">RESERVAS</a></li>
+			</ul></nav>
+			</div>
+	</div>
+		<h5>Contatos</h5>
+</div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+	<div class="wheat">
+
+		<div class="cadastro">
+
+			<form method="POST">
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="FC">
+					<label>Assunto:
+						<select name="Assunto" required>
+							<option value="Sugestao">Sugestão</option>
+							<option value="Trabalho">Trabalhe Conosco</option>
+							<option value="Eveto">Marcar Evento</option>
+							<option value="Duvidas">Dúvidas</option>
+						</select>
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="LC">
+					<label>	Nome:<br>
+						<input type="text" name="NomePessoa" placeholder="Nome" required>
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="LC">
+					<label>Email:<br>
+						<input type="email" name="EmailPessoa" placeholder="Email" required>
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="LC">
+					<label>Telefone:<br>
+						<input type="text" name="TelefoneP" placeholder="Telefone" required>
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="LC">
+					<label>Região:<br>
+						<select name="Regiao" required>
+							<option value="PR">Região</option>
+							<option value="AC">Acre - AC</option>
+							<option value="AL">Alagoas - AL</option>
+							<option value="AP">Amapá - AP</option>
+							<option value="AM">Amazonas - AM</option>
+							<option value="BA">Bahia- BA</option>
+							<option value="CE">Ceará - CE</option>
+							<option value="DF">Distrito Federal - DF</option>
+							<option value="ES">Espírito Santo - ES</option>
+							<option value="GO">Goiás - GO</option>
+							<option value="MA">Maranhão - MA</option>
+							<option value="MT">Mato Grosso - MT</option>
+							<option value="MS">Mato Grosso do Sul - MS</option>
+							<option value="PG">Minas Gerais - MG</option>
+							<option value="PA">Pará - PA</option>
+							<option value="PB">Paraíba - PB</option>
+							<option value="PR">Paraná - PR</option>
+							<option value="PE">Pernambuco - PE</option>
+							<option value="PI">Piauí - PI</option>
+							<option value="RJ">Rio de Janeiro - RJ</option>
+							<option value="RN">Rio Grande do Norte - RN</option>
+							<option value="RS">Rio Grande do Sul - RS</option>
+							<option value="RO">Rondônia - RO</option>
+							<option value="RR">Roraima - RR</option>
+							<option value="SC">Santa Catarina - SC</option>
+							<option value="SP">São Paulo - SP</option>
+							<option value="SE">Sergipe - SE</option>
+							<option value="TO">Tocantins - TO</option>
+						</select>
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="txtcont">
+				<label>
+					Comentário:<br><br>
+							<textarea name="Comentario"></textarea>
+						
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<center><div class="RC">
+					<label>
+						<input type="submit" value="Enviar" name="submit">
+					</label>
+				</div></center>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+			</form>	
+		</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+		<div class="desccad">
+
+			<h1>VALORES</h1>
+				<p><b>Valor rodízio (almoço-jantar):</b> R$35,00</p>
+				<p><b>Valor Buffet (almoço-jantar):</b> R$20,00</p>
+				<p>*Crianças de até 10 anos não pagam</p>
+				<br>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+			<h1>HORÁRIO</h1>
+				<p><b>Terça à Sexta-feira</b> - 11:30 às 22:30</p>
+				<p><b>Sábado ao Domingo</b> - 12:00 às 23:45</p>
+				<br>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+			<h1>ENDEREÇO</h1>
+				<p>Recanto Tropical, Rua Cedro, nº398</p>
+				<p>Cascavel - Paraná</p>
+				<br>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+			<h1>TELEFONE</h1>
+				<p><b>+55 (45) 6817-5625</b></p>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+			<h1>E-MAIL</h1>
+				<p><b>churrascariacia@gmail.com</b></p>
+		</div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+</div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+</body>
+
+</html>

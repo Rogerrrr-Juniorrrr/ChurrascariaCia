@@ -1,0 +1,180 @@
+<!--<?php
+include("cone.php");
+	if(isset($_POST['submit'])){
+		$NomeCliente = $_POST['NomeCliente'];
+		$EmailCliente = $_POST['EmailCliente'];
+		$DiaR = $_POST['DiaR'];
+		$TelefoneC = $_POST['TelefoneC'];
+		$Npessoas = $_POST['Npessoas'];
+		$Horario = $_POST['Horario'];
+		$Reserva = $_POST['Reserva'];
+		$Coment = $_POST['Coment'];
+
+			$sql = "INSERT INTO cliente (NomeCliente, EmailCliente, DiaR, TelefoneC, Npessoas, Horario, Reserva, Coment)
+			VALUES ('$NomeCliente', '$EmailCliente','$DiaR', '$TelefoneC', '$Npessoas', '$Horario', '$Reserva', '$Coment')";
+
+					if(mysqli_query($conn, $sql)){
+					header("location:Redirecio1.php");
+					}else{
+					echo "Problemas No Cadastro Da Reserva";
+					}
+					$response = array("success" => true);
+					}
+?>-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Churrascaria&Cia | Reserva</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../CSS/form.css">
+	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<br>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<div class="body2">
+	<div class="Opc">
+		<br><br>
+			<div class="Opc1">
+				<nav><ul>
+	    <li><a href="Inicio.html">INÍCIO</a></li>
+		<li><a href="Cardapio.html">CARDÁPIO</a></li>
+	    <li><a href="Churrascaria.html">CHURRASCARIA</a></li>
+	    		</ul></nav>
+			</div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<div class="tri"><a href="Inicio.html"><img src="../Imagens/CC2.png" width="125" height="125"></a></div>
+<!-- ---------------------------------------------------------------------------------------------------- -->					
+			<div class="Opc2">
+				<nav><ul>
+		<li><a href="Eventos.html">EVENTOS</a></li>
+		<li><a href="Contact.html">CONTATOS</a></li>
+	    <li><a href="Reserva.html">RESERVAS</a></li>
+			</ul></nav>
+			</div>
+	</div>
+
+		<h5>Reservas</h5>
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+	<div class="wheat">
+
+		<div class="cadastro">
+
+			<form method="POST">
+<!-- ---------------------------------------------------------------------------------------------------- -->
+				<div class="LC">
+					<label>Nome:<br>
+						<input type="text" name="NomeCliente" placeholder="Nome" required>
+					</label>
+				</div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="LC">
+					<label>Email:<br>
+						<input type="email"  name="EmailCliente" placeholder="Email" required>
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="LC">
+					<label>Dia:<br>
+						<input type="date" name="DiaR" min="2019-11-07" max="2020-02-01" data-validatior="date">
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="LC">
+					<label>Telefone:<br>
+						<input type="text" name="TelefoneC" placeholder="Telefone" required>
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="LC">
+					<label>Número de pessoas:
+						<input type="number" name="Npessoas" required data-validator="min_max" min="4" max="30" placeholder="Mínimo de 4 e máximo de 30">
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="LC">
+					<label>Horário:<br>
+						<select name="Horario" required>
+							<option value="Almoço">Almoço</option>
+							<option value="Jantar">Jantar</option>
+						</select>
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="FC">
+					<label>Mesa:<br>
+						<select name="Reserva" required>
+							<option value="1">Pequena (4-6 pessoas)</option>
+							<option value="2">Media (8-16 pessoas)</option>
+							<option value="3">Grande (20-40 pessoas)</option>
+						</select>
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<div class="txtres">
+				<label>
+					Deseja algo a mais?<br><br>
+							<textarea name="Coment"></textarea>
+					</label>
+				</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+				<center><div class="RC">
+					<label>
+						<input type="submit" value="Reservar" name="submit">
+					</label>
+				</div></center>
+			</form>
+		</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+		<div class="desccad">
+
+			<h1>VALORES</h1>
+				<p><b>Valor rodízio (almoço-jantar):</b> R$35,00</p>
+				<p><b>Valor Buffet (almoço-jantar):</b> R$20,00</p>
+				<p>*Crianças de até 10 anos não pagam</p>
+				<br>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+			<h1>HORÁRIO</h1>
+				<p><b>Terça à Sexta-feira</b> - 11:30 às 22:30</p>
+				<p><b>Sábado ao Domingo</b> - 12:00 às 23:45</p>
+				<br>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+			<h1>ENDEREÇO</h1>
+				<p>Recanto Tropical, Rua Cedro, nº398</p>
+				<p>Cascavel - Paraná</p>
+				<br>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+			<h1>TELEFONE</h1>
+				<p><b>+55 (45) 6817-5625</b></p>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+			<h1>E-MAIL</h1>
+				<p><b>churrascariacia@gmail.com</b></p>
+		</div>
+
+
+	</div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+</body>
+</html>
